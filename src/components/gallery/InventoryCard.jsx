@@ -15,11 +15,12 @@ const InventoryCard = ({ item, isFavorite, onToggleFavorite, onClick }) => {
       flexDirection: 'column',
       height: '100%' // Картки будуть однакової висоти
     }}>
-      <div style={{ position: 'relative', height: '220px', background: '#f8f9fa' }}>
+      <div style={{ position: 'relative', height: '220px', background: '#f8f9fa', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
         <img 
-          src={item.inventory_image} 
+          src={`http://localhost:5000${item.inventory_image}`}
           alt={item.inventory_name}
           style={{ 
+            alignItems: 'center',
             width: '100%', 
             height: '100%', 
             objectFit: 'contain', // Фото не буде обрізатися [cite: 139]

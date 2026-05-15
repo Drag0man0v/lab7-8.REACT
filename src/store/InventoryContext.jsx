@@ -22,13 +22,13 @@ export const InventoryProvider = ({ children }) => {
   };
 
   const deleteItem = async (id) => {
-    try {
-      await inventoryApi.delete(id);
-      setItems(items.filter(item => item.id !== id));
-    } catch (err) {
-      alert('Помилка при видаленні');
-    }
-  };
+  try {
+    await inventoryApi.delete(id);
+    setItems(prev => prev.filter(item => item.id !== id));
+  } catch (err) {
+    alert('Помилка при видаленні');
+  }
+};
 
   return (
     <InventoryContext.Provider value={{ items, loading, error, fetchInventory, deleteItem }}>
