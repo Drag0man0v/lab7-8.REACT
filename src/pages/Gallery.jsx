@@ -1,9 +1,8 @@
 import { useState, useEffect } from 'react';
 import { useInventory } from '../store/InventoryContext';
 import { useFavorites } from '../hooks/useFavorites';
-import InventoryGallery from '../gallery/InventoryGallery';
-import InventoryQuickView from '../gallery/InventoryQuickView';
-import FavoritesBar from '../gallery/FavoritesBar';
+import InventoryGallery from '../components/gallery/InventoryGallery';
+import InventoryQuickView from '../components/gallery/InventoryQuickView';
 
 const Gallery = () => {
   const { items, fetchInventory } = useInventory();
@@ -15,7 +14,6 @@ const Gallery = () => {
   return (
     <div style={{ paddingBottom: '50px' }}>
       <h1 style={{ fontSize: '32px', marginBottom: '30px' }}>🛍️ Каталог товарів</h1>
-      <FavoritesBar />
 
       <InventoryGallery
         items={items}

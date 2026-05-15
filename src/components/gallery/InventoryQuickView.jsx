@@ -1,5 +1,5 @@
 import React from 'react';
-import InventoryDetails from '../components/inventory/InventoryDetails';
+import InventoryDetails from '../inventory/InventoryDetails';
 
 const InventoryQuickView = ({ item, onClose }) => {
   if (!item) return null;
@@ -32,12 +32,11 @@ const InventoryQuickView = ({ item, onClose }) => {
           top: '20px',
           right: '20px',
           border: 'none',
-          background: '#eee',
+          color: '#000000',
+          backgroundColor: '#ffffff',
           borderRadius: '50%',
-          width: '30px',
-          height: '30px',
           cursor: 'pointer'
-        }}>✕</button>
+        }}>ВИХІД</button>
         
         <div style={{ marginTop: '20px' }}>
           <InventoryDetails item={item} />

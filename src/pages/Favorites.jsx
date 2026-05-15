@@ -1,10 +1,13 @@
+import { useState } from 'react';
 import { useInventory } from '../store/InventoryContext';
 import { useFavorites } from '../hooks/useFavorites';
-import InventoryCard from '../gallery/InventoryCard';
+import InventoryCard from '../components/gallery/InventoryCard';
+import InventoryQuickView from '../components/gallery/InventoryQuickView';
 
 const Favorites = () => {
   const { items } = useInventory();
   const { favorites, isFavorite, toggleFavorite } = useFavorites();
+  const [selectedItem, setSelectedItem] = useState(null);
 
   const favoriteItems = items.filter(item => favorites.includes(item.id));
 
@@ -25,9 +28,17 @@ const Favorites = () => {
               item={item}
               isFavorite={true}
               onToggleFavorite={toggleFavorite}
+              onClick={() => setSelectedItem(item)}
             />
           ))}
         </div>
+      )}
+
+      {selectedItem && (
+        <InventoryQuickView
+          item={selectedItem}
+          onClose={() => setSelectedItem(null)}
+        />
       )}
     </div>
   );

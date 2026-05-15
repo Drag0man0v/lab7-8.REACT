@@ -16,7 +16,7 @@ app.use('/images', express.static(path.join(__dirname, './images')));
 // Налаштування для збереження файлів
 const storage = multer.diskStorage({
   destination: (req, file, cb) => {
-    cb(null, path.join(__dirname, 'public/images/'));
+    cb(null, path.join(__dirname, './images/'));
   },
   filename: (req, file, cb) => {
     cb(null, Date.now() + '-' + file.originalname);
@@ -92,4 +92,4 @@ app.delete('/inventory/:id', (req, res) => {
     res.status(204).send();
 });
 
-app.listen(5000, () => console.log('🚀 Сервер працює на http://localhost:5000'));
+app.listen(5000, () => console.log('Сервер працює на http://localhost:5000'));
