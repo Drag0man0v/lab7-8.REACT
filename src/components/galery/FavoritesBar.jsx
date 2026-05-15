@@ -18,7 +18,7 @@ const FavoritesBar = () => {
       alignItems: 'center',
       border: '1px solid #ffeeba'
     }}>
-      <span>У тебе вже <strong>{favorites.length}</strong> улюблених хвостиків! 🐾</span>
+      <span>У тебе вже <strong>{favorites.length}</strong> улюблених товарів</span>
       <Link to="/favorites" style={{ 
         color: '#856404', 
         fontWeight: 'bold',

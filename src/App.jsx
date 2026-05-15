@@ -3,6 +3,8 @@ import AdminInventory from './pages/AdminInventory';
 import AdminInventoryCreate from './pages/AdminInventoryCreate';
 import AdminInventoryEdit from './pages/AdminInventoryEdit';
 import AdminInventoryDetails from './pages/AdminInventoryDetails';
+import Gallery from './pages/Gallery.jsx';
+import Favorites from './pages/Favorites.jsx';
 import { Link } from 'react-router-dom';
 
 const Navbar = () => (
@@ -30,6 +32,8 @@ function App() {
       <Navbar />
       <div style={{ padding: '20px', maxWidth: '1200px', margin: '0 auto' }}>
         <Routes>
+          <Route path="/" element={<Gallery />} />
+          <Route path="/favorites" element={<Favorites />} />
           <Route path="/admin" element={<AdminInventory />} />
           <Route path="/admin/create" element={<AdminInventoryCreate />} />
           <Route path="/admin/edit/:id" element={<AdminInventoryEdit />} />
